@@ -33,6 +33,7 @@ exports.store = async (req, res) => {
   });
 
   try {
+    await order.destroy({where: {transactionId}});
     const orderData = await order.bulkCreate(newOrders);
 
     return res.json({message: 'Ordes send', orderData});
