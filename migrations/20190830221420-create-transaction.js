@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.DOUBLE
       },
       isPaid: {
-        type: Sequelize.TINYINT
+        type: Sequelize.INTEGER(1)
       },
       createdAt: {
         allowNull: false,
