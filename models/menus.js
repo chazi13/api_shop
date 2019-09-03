@@ -4,10 +4,14 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     price: DataTypes.DOUBLE,
     image: DataTypes.STRING,
-    isStared: DataTypes.TINYINT
+    isStared: DataTypes.TINYINT,
+    categoryId: DataTypes.INTEGER
   }, {});
   menus.associate = function(models) {
-    // associations can be defined here
+    menus.belongsTo(models.category, {
+      as: 'category',
+      foreignKey: 'categoryId'
+    })
   };
   return menus;
 };
