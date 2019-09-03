@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       finishedTime: {
-        type: Sequelize.TIME
+        type: Sequelize.INTEGER
       },
       subtotal: {
         type: Sequelize.DOUBLE
