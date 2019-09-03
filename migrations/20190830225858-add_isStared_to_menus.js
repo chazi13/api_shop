@@ -13,7 +13,7 @@ module.exports = {
       queryInterface.addColumn(
         'menus',
         'isStared',
-        Sequelize.TINYINT
+        Sequelize.INTEGER(1)
       )
     ]);
   },
