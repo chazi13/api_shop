@@ -66,7 +66,7 @@ exports.confirm = async (req, res) => {
 
   try {
     const transactionData = await transaction.findOne({where: {id: transactionId}});
-    console.log(transactionData)
+
     if (transactionData) {
       const transaction = await transactionData.update({
         finishedTime, subtotal, discount, serviceCharge: service, tax, total, isPaid: 1
@@ -75,6 +75,6 @@ exports.confirm = async (req, res) => {
       return res.json(transaction);
     }
   } catch (err) {
-    return res.status(500).json({message: 'Internal server error'});
+    return res.status(500).json({message: 'Internal server error', err});
   }
 }
