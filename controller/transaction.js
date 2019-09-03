@@ -66,6 +66,7 @@ exports.confirm = async (req, res) => {
 
   try {
     const transactionData = await transaction.findOne({where: {id: transactionId}});
+    console.log(transactionData)
     if (transactionData) {
       const transaction = await transactionData.update({
         finishedTime, subtotal, discount, serviceCharge: service, tax, total, isPaid: 1
