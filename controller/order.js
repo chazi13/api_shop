@@ -42,7 +42,7 @@ exports.store = async (req, res) => {
 
     return res.json({message: 'Ordes send', orderData});
   } catch (err) {
-    return res.status(422).json({message: 'Unhandle request'});
+    return res.status(422).json({message: 'Unhandle request', err});
   }
 }
 
