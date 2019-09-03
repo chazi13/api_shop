@@ -26,5 +26,8 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
+    return Promise.all([
+      queryInterface.removeColumn('menus', 'categoryId')
+    ]);
   }
 };
